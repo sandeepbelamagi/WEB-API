@@ -7,11 +7,11 @@ print(response.status_code)
 
 dict1 = response.json()
 # print(dict1)
-b = dict1[0].get('stop-and-search')
-a = ','.join(b)
-c = {'stop-and-search': a}
+
 for data in dict1:
-    data.update(c)
+    b = data.get('stop-and-search')
+    a = ",".join(b)
+    data['stop-and-search'] = a
 # print(dict1)
 #
 out_file = open("myfile.json", "w")
